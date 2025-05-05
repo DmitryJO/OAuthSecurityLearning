@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Auth</title>
+    <style>
+        .mainBlock {
+            border: 2px solid rgb(95, 97, 110);
+            border-radius: 0.5em;
+            padding: 20px;
+            width: 10em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #Welcome {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            border: 2px solid rgb(75, 70, 74);
+            border-radius: 0.5em;
+            font: 1.2em sans-serif;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-    <body>
-        <h1 align="center">You was authenticated</h1>
-    </body>
+<body>
+<div class="container">
+    <h1 id="Welcome">Поздравляю!! Вы вошли используя OAuth2!!!</h1>
+
+    <div class="mainBlock">
+        <a href="/home">Домой</a>
+    </div>
+</div>
+</body>
 </html>

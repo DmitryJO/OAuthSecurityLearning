@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.github {
+    background-color: #333; /* Цвет кнопки GitHub */
+}
+
+.google {
+    background-color: #db4437; /* Цвет кнопки Google */
+
+}
+
+.button:hover {
+    opacity: 0.9; /* Эффект при наведении */
+}
+
+.icon {
+    width: 20px; /* Ширина иконки */
+    height: 20px; /* Высота иконки */
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+}

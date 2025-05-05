@@ -1,4 +1,4 @@
-package com.example.ssiach16ex1;
+package ru.dm.smirnov;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
