@@ -2,39 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-        .mainBlock {
-            border: 2px solid rgb(95, 97, 110);
-            border-radius: 0.5em;
-            padding: 20px;
-            width: 10em;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        #Welcome {
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 100vh;
         }
 
         .container {
-            border: 2px solid rgb(75, 70, 74);
+            background-color: white;
+            border-radius: 1em;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            width: 400px; /* Увеличена ширина контейнера */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .mainBlock {
+            background-color: #007bff;
             border-radius: 0.5em;
-            font: 1.2em sans-serif;
-            height: 350px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 15px;
+            margin: 10px 0;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .mainBlock a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .mainBlock:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                width: 90%;
+            }
         }
     </style>
+    <script>
+        function logout(event) {
+            event.preventDefault();
+            alert("Вы были отключены.");
+            window.location.href = "/logout";
+        }
+    </script>
 </head>
 <body>
 <div class="container">
-    <h1 id="Welcome">Добро пожаловать на тест OAuth2</h1>
-
+    <h1 id="Welcome">Добро пожаловать!</h1>
     <div class="mainBlock">
         <a href="/auth">Я уже вошел</a>
     </div>
@@ -42,7 +73,7 @@
         <a href="/login">Войти</a>
     </div>
     <div class="mainBlock">
-        <a href="/logout">Выйти</a>
+        <a href="/logout" onclick="logout(event)">Выйти</a>
     </div>
 </div>
 </body>
