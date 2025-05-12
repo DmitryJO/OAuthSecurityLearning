@@ -5,3 +5,12 @@
 * Реализовать возможность входа через свой сервис keycloak
 
 * Дополнительно реализовать возможность входа через свой сервис авторизации
+
+## Конфигурация Keycloak (вручную)
+
+1. Realm: `any realm`
+2. Client: `your client name`
+    - Client ID: `..`
+    - Client Secret: `...`
+    - Client Authentication: `authorization_code`
+    - Add Role: `manager`, `admin`

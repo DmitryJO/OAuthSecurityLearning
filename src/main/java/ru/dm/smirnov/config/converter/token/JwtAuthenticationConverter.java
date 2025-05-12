@@ -1,20 +1,21 @@
-package ru.dm.smirnov.config.token;
+package ru.dm.smirnov.config.converter.token;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
 @Component
-public class JwtAuthenticationConverter implements Converter<Jwt, CustomAuthentication> {
+public class JwtAuthenticationConverter implements Converter<Jwt, JwtAuthenticationToken> {
 
     protected Converter<Jwt, Collection<GrantedAuthority>> jwtGrantedAuthoritiesConverter = new RealmAccessGrantedAuthoritiesConverter();
 
     @Override
-    public CustomAuthentication convert(Jwt source) {
-        return new CustomAuthentication(source, getAuthority(source));
+    public JwtAuthenticationToken convert(Jwt source) {
+        return new JwtAuthenticationToken(source, getAuthority(source));
     }
 
     public Collection<GrantedAuthority> getAuthority(Jwt jwt) {

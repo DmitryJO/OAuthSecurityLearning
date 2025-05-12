@@ -1,4 +1,4 @@
-package ru.dm.smirnov.config.token;
+package ru.dm.smirnov.config.converter.token;
 
 import lombok.Getter;
 import lombok.Setter;
