@@ -1,4 +1,4 @@
-package ru.dm.smirnov.config.converter.token;
+package ru.dmsmirnov.config.converter.token;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,4 +1,4 @@
-package ru.dm.smirnov.config.converter;
+package ru.dmsmirnov.config.converter;
 
 import org.springframework.util.StringUtils;
 

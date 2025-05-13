@@ -10,22 +10,15 @@
         <relativePath/>
     </parent>
 
-    <groupId>ru.rtc.medline</groupId>
-    <artifactId>lk-employee-service</artifactId>
+    <groupId>ru.dmsmirnov</groupId>
+    <artifactId>security-keycloak-oauth2</artifactId>
     <version>${artifactVersion}</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <springdoc.version>2.5.0</springdoc.version>
-        <spring-cloud.version>2023.0.1</spring-cloud.version>
-
-        <jaxb2-maven-plugin.version>3.1.0</jaxb2-maven-plugin.version>
         <spring-boot-maven-plugin.version>3.2.5</spring-boot-maven-plugin.version>
-
-        <keycloak-admin-client.version>25.0.0</keycloak-admin-client.version>
-        <zxing.version>3.4.0</zxing.version>
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -35,6 +28,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

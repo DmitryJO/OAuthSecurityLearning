@@ -1,14 +1,14 @@
-package ru.dm.smirnov.controllers;
+package ru.dmsmirnov.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ManagerController {
+public class SuperUserController {
 
-    @GetMapping("/manager")
+    @GetMapping("/superuser")
     public String getHello() {
-        return "Hello manager!";
+        return "Hello superuser!";
     }
 
 }
