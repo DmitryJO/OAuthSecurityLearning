@@ -8,7 +8,7 @@
 
 ## Конфигурация Keycloak (вручную)
 
-1. Realm: `any realm`
+1. Realm: `any realm` (Есть поддержка всех realm)
 2. Client: `your client name`
     - Client ID: `..`
     - Client Secret: `...`

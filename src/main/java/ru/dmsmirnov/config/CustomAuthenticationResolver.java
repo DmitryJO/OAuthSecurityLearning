@@ -42,6 +42,7 @@ public class CustomAuthenticationResolver implements AuthenticationManagerResolv
             return new ProviderManager(oldProvider);
         }
 
+        // Проверка ключей токена
         JwtDecoder jwtDecoder = NimbusJwtDecoder.withJwkSetUri(issuer + KEYCLOAK_JWKS_URI).build();
         JwtAuthenticationProvider provider = new JwtAuthenticationProvider(jwtDecoder);
         provider.setJwtAuthenticationConverter(converter);

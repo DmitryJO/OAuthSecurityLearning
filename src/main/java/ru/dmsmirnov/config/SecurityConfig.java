@@ -9,6 +9,9 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtIss
 import org.springframework.security.web.SecurityFilterChain;
 import ru.dmsmirnov.config.converter.token.JwtAuthenticationConverter;
 
+import static jakarta.servlet.DispatcherType.ERROR;
+import static jakarta.servlet.DispatcherType.FORWARD;
+
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
@@ -20,12 +23,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtIssuerAuthenticationManagerResolver resolver) throws Exception {
         http.oauth2ResourceServer(oauth2 -> oauth2
                 .authenticationManagerResolver(resolver));
-
         http
-                .oauth2Login(c -> c.defaultSuccessUrl("/hello"))
+                .oauth2Login(c -> c.defaultSuccessUrl("/home"))
                 .authorizeHttpRequests(
                         c -> c
-                                .requestMatchers("/hello").permitAll()
+                                .dispatcherTypeMatchers(FORWARD, ERROR).permitAll()
+                                .requestMatchers("/home", "/", "/hello").permitAll()
                                 .requestMatchers("/manager").hasAnyAuthority("manager", "admin")
                                 .requestMatchers("/superuser").hasAuthority("admin")
                                 .anyRequest().authenticated()
