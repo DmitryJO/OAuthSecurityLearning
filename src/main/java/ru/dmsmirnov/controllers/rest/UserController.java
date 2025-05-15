@@ -1,7 +1,6 @@
 package ru.dmsmirnov.controllers.rest;
 
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,10 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @GetMapping("/user")
-    public String getUserHome() {
-        OAuth2AuthenticationToken authentication = (OAuth2AuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
-        Object object = authentication.getPrincipal().getAttributes().get("name");
-        return "Hello " + object + "!";
+    public String getUserHome(Authentication authentication) {
+        return "Hello " + authentication.getName() + "!";
     }
 
 }
